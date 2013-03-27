@@ -175,7 +175,11 @@ public class XmlParser11
       }
       reader.close();
       context.write(propertyName.trim(), propertyValue.trim());
-    }catch(Exception e){
+    }
+        catch(Exception e){
+                System.out.println("error in map");
+
+                }
 
   }
 }
