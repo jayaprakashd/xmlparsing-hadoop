@@ -227,7 +227,7 @@ public static class Reduce
                 job.setOutputValueClass(Text.class);
 
                 job.setMapperClass(XmlParser11.Map.class);
-                //job.setReducerClass(XmlParser11.Reduce.class);
+                job.setReducerClass(XmlParser11.Reduce.class);
 
                 job.setInputFormatClass(XmlInputFormat1.class);
                 job.setOutputFormatClass(TextOutputFormat.class);
