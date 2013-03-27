@@ -44,6 +44,7 @@ public class XmlParser11
          * xml blocks as records as specified by the start tag and end tag
          *
          */
+         @Override
         public static class XmlRecordReader extends
                 RecordReader<LongWritable, Text> {
             private byte[] startTag;
@@ -55,13 +56,13 @@ public class XmlParser11
 
             private LongWritable key = new LongWritable();
             private Text value = new Text();
-
+                @Override
             public void initialize(InputSplit split, TaskAttemptContext context)
                     throws IOException, InterruptedException {
                 Configuration conf = context.getConfiguration();
                 startTag = conf.get(START_TAG_KEY).getBytes("utf-8");
                 endTag = conf.get(END_TAG_KEY).getBytes("utf-8");
- FileSplit fileSplit = (FileSplit) split;
+                FileSplit fileSplit = (FileSplit) split;
 
                 // open the file and seek to the start of the split
                 start = fileSplit.getStart();
@@ -72,7 +73,7 @@ public class XmlParser11
                 fsin.seek(start);
 
             }
-
+        @Override
             public boolean nextKeyValue() throws IOException,
                     InterruptedException {
                 if (fsin.getPos() < end) {
@@ -92,22 +93,22 @@ public class XmlParser11
                 }
                 return false;
             }
-
+        @Override
            public LongWritable getCurrentKey() throws IOException,
                     InterruptedException {
                 return key;
             }
 
-
+        @Override
             public Text getCurrentValue() throws IOException,
                     InterruptedException {
                 return value;
             }
-
+        @Override
             public void close() throws IOException {
                 fsin.close();
             }
-
+        @Override
             public float getProgress() throws IOException {
                 return (fsin.getPos() - start) / (float) (end - start);
             }
