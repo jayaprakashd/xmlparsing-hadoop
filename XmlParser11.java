@@ -177,7 +177,7 @@ public class XmlParser11
       context.write(propertyName.trim(), propertyValue.trim());
     }
         catch(Exception e){
-                System.out.println("error in map");
+                throw new IOException(e);
 
                 }
 
