@@ -1,3 +1,7 @@
+
+
+//PRINTING XML ELEMENTS N OUTPUTTING IT IN XML FORMAT
+//INPUT IS AN XML FILE
 package com.org;
 import javax.xml.stream.XMLStreamConstants;//XMLInputFactory;
 import java.io.*;
