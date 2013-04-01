@@ -174,7 +174,8 @@ public class XmlParser11
         }
       }
       reader.close();
-      context.write(propertyName.trim(), propertyValue.trim());
+      context.write(new Text(propertyName.trim()), new Text(propertyValue.trim()));
+     
     }
         catch(Exception e){
                 throw new IOException(e);
