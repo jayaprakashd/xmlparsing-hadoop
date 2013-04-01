@@ -165,10 +165,10 @@ public class XmlParser11
           case XMLStreamConstants.CHARACTERS:  //CHARACTERS:
             if (currentElement.equalsIgnoreCase("name")) {
               propertyName += reader.getText();
-              System.out.println(propertyName);
+              //System.out.println(propertyName);
             } else if (currentElement.equalsIgnoreCase("value")) {
               propertyValue += reader.getText();
-              System.out.println(propertyValue);
+              //System.out.println(propertyValue);
             }
             break;
         }
