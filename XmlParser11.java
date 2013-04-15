@@ -1,7 +1,18 @@
 
-
 //PRINTING XML ELEMENTS N OUTPUTTING IT IN XML FORMAT
 //INPUT IS AN XML FILE
+<configuration>
+    <property>
+            <name>dfs.replication</name>
+            <value>1</value>
+     </property>
+    <property>
+        <name>dfs</name>
+        <value>2</value>
+    </property>
+ </configuration>
+
+
 package com.org;
 import javax.xml.stream.XMLStreamConstants;//XMLInputFactory;
 import java.io.*;
